@@ -47,11 +47,11 @@
     h4 {
       font-weight: 900;
     }
-    .stopped {
-      color: #d21013;
+    h4.stopped {
+      color: $fintros-red;
     }
-    .running {
-      color: #1a7cff;
+    h4.running {
+      color: $fintros-blue;
     }
   }
   #stat-cells {
