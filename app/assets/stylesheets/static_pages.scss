@@ -43,17 +43,16 @@
   margin: 0 auto;
   text-align: center;
 
-  #running {
-    h4 {
-      font-weight: 900;
-    }
-    h4.stopped {
-      color: $fintros-red;
-    }
-    h4.running {
-      color: $fintros-blue;
-    }
+  h4 {
+    font-weight: 900;
   }
+  .stopped {
+    color: $fintros-red;
+  }
+  .running {
+    color: $fintros-blue;
+  }
+
   #stat-cells {
     margin-top: 1rem;
     display: flex;
