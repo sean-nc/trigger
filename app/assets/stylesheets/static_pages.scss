@@ -34,3 +34,41 @@
     }
   }
 }
+
+#stats {
+  margin: 3rem auto 0;
+}
+
+#inner_stats {
+  margin: 0 auto;
+  text-align: center;
+
+  #running {
+    h4 {
+      font-weight: 900;
+    }
+    .stopped {
+      color: $fintros-red;
+    }
+    .running {
+      color: $fintros-blue;
+    }
+  }
+  #stat-cells {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+    .stat-cell {
+      width: 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      p {
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: center
+      }
+    }
+  }
+}
