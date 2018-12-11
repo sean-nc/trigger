@@ -27,6 +27,8 @@
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
+    <%= link_to "Home", root_path, class: "home-button" %>
+    <%= link_to "Search", search_path, class: "home-button" %>
     <%= yield %>
   </body>
 </html>
