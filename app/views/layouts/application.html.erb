@@ -27,8 +27,10 @@
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
-    <%= link_to "Home", root_path, class: "home-button" %>
-    <%= link_to "Search", search_path, class: "home-button" %>
+    <div class="links">
+      <%= link_to "START SEARCH", search_path, class: "home-button" %>
+      <%= link_to "SEARCH TERMS", "http://finscrap1.herokuapp.com/search_terms", class: "home-button"%>
+    </div>
     <%= yield %>
   </body>
 </html>

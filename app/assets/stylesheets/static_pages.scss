@@ -113,3 +113,25 @@
   font-weight: 300;
   color: black;
 }
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-button {
+  margin: 0.2rem;
+  text-align: center;
+  width: 10rem;
+  background: white;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: $fintros-blue;
+
+  &:hover {
+    cursor: pointer;
+    background: $fintros-blue;
+    color: white;
+  }
+}
