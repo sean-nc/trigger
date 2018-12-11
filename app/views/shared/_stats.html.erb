@@ -2,7 +2,7 @@
   <% if Bookmark.count > 0 and Bookmark.maximum(:updated_at) > (Time.now.utc - 1.minute) %>
     <h4 id="target2" class="running loading">Running<span>.</span><span>.</span><span>.</span></h4>
       <% else %>
-    <h4 id="target2" class="stopped loading">Stopped<span>.</span><span>.</span><span>.</span></h4>
+    <h4 id="target2" class="stopped">Stopped</h4>
   <% end %>
   <div id="stat-cells">
     <div class="stat-cell">
