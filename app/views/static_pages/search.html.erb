@@ -10,10 +10,14 @@
   }
 
   setTimeout(function () {
-    setInterval('refreshPage()', 2000);
+    setInterval('refreshPage()', 5000);
   }, 30000);
 
-  setTimeout(function (){
-    window.location.reload()
-  }, 1200000)
+  function stoppedWorking() {
+    if($('#stats:contains("Stopped")').length > 0) {
+      window.location.reload()
+    }
+  }
+
+  setInterval('stoppedWorking()', 10000)
 </script>
