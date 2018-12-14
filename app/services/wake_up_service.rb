@@ -5,10 +5,10 @@ module WakeUpService
     def run
       @agent = Mechanize.new
 
-      @url_array = ['https://finscrap1.herokuapp.com/search',
-                    'https://finscrap2.herokuapp.com/search',
-                    'https://finscrap3.herokuapp.com/search',
-                    'https://finscrap4.herokuapp.com/search']
+      @url_array = ['https://fintros-scraper1.herokuapp.com/search',
+                    'https://fintros-scraper2.herokuapp.com/search',
+                    'https://fintros-scraper3.herokuapp.com/search',
+                    'https://fintros-scraper4.herokuapp.com/search']
 
       @url_array.each_with_index do |url, index|
         thread = Thread.new do
