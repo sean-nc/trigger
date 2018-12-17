@@ -16,7 +16,7 @@ module TriggerService
         @url_array.each_with_index do |url, index|
           begin
             index += 1
-            sleep 10
+            sleep 5
             p "Starting app#{index}."
             @agent.get(url)
             p "No more search terms."
