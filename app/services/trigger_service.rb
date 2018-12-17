@@ -16,13 +16,13 @@ module TriggerService
         @url_array.each_with_index do |url, index|
           begin
             index += 1
-            sleep 15
+            sleep 25
             p "Starting app#{index}."
             @agent.get(url)
             p "No more search terms."
             return
-          rescue
-            p 'Blocked by Google, next app.'
+          rescue => e
+            p e
             next
           end
         end
