@@ -70,4 +70,3 @@ gem 'axlsx_rails' # excel exporting
 gem 'will_paginate', '~> 3.1.0' # pagination
 gem "roo", "~> 2.7.0" # file importer
 gem "simple_calendar", "~> 2.0" # calendar gem
-
