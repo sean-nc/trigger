@@ -24,13 +24,15 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-    <div class="links">
-      <%= link_to "START SEARCH", search_path, class: "home-button" %>
-      <%= link_to "SEARCH TERMS", "https://fintros-scraper1.herokuapp.com/search_terms", class: "home-button"%>
+    <div class="body">
+      <%= render 'layouts/admin_bar' %>
+      <div class="content">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </div>
-    <%= yield %>
   </body>
 </html>

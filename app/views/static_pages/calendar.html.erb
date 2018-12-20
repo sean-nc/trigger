@@ -1,0 +1,6 @@
+<%= month_calendar do |date| %>
+  <%= link_to statistics_path controller: 'statistics', action: 'get', date: date do %>
+    <%= date.strftime('%b') %><br/>
+    <%= date.strftime('%d') %>
+  <% end %>
+<% end %>

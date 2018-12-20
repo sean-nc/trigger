@@ -1,0 +1,52 @@
+<div class="statistics">
+  <%= link_to "Back", :back %>
+
+  <div class="statistic-header">
+    <h2>
+      <%= @date.strftime('%B %-d, %Y') %>
+
+      <span class="prev-next-day">
+        <%= link_to statistics_path controller: 'statistics', action: 'get', date: @date - 1.days do %>
+          Previous Day
+        <% end %>
+        <%= link_to statistics_path controller: 'statistics', action: 'get', date: @date + 1.days do %>
+          Next Day
+        <% end %>
+      </span>
+    </h2>
+  </div>
+
+  <div class="statistic-row">
+    <h4>
+      All Day
+      <span class="small-header">
+        <%= @start_date.strftime('%I:%M %p') %>
+        to
+        <%= @end_date.strftime('%I:%M %p') %>
+      </span>
+    </h4>
+    <li>Terms Searched: <b><%= @searched_terms.count %></b></li>
+    <li>Profiles Added: <b><%= @profiles.count %></b></li>
+  </div>
+
+  <% 24.times do |n| %>
+    <div class="statistic-row">
+      <h4>
+        Hour <%= n+1 %>
+        <span class="small-header">
+          <%= (@start_date + n.hours).strftime('%I:%M %p') %>
+          to
+          <%= (@start_date + n.hours + 1.hours - 1).strftime('%I:%M %p')%>
+        </span>
+      </h4>
+      <li>Terms Searched:
+        <b><%= @searched_terms.where(updated_at:
+            (@start_date + n.hours)..(@start_date + n.hours + 1.hours - 1)).count %></b>
+      </li>
+      <li>Profiles Added:
+        <b><%= @profiles.where(created_at:
+          (@start_date + n.hours)..(@start_date + n.hours + 1.hours - 1)).count %></b>
+      </li>
+    </div>
+  <% end %>
+</div>

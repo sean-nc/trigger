@@ -1,0 +1,168 @@
+<div class="about-bar">
+  <li><b>Guide</b></li>
+  <li onclick="getElementById('walkthrough').scrollIntoView();">Walkthrough</li>
+  <li onclick="getElementById('scrape').scrollIntoView();">Scrape</li>
+  <li onclick="getElementById('single-search').scrollIntoView();">Enter Single Term</li>
+  <li onclick="getElementById('multiple-search').scrollIntoView();">Import Terms</li>
+  <li onclick="getElementById('search-profiles').scrollIntoView(false);">Search Profiles</li>
+  <li onclick="getElementById('download-profiles').scrollIntoView();">Download Profiles</li>
+  <br/>
+  <li><b>About</b></li>
+  <li onclick="getElementById('multiple-applications').scrollIntoView();">Multiple Apps</li>
+  <li onclick="getElementById('trigger-script').scrollIntoView();">Trigger Script</li>
+  <li onclick="getElementById('shared-database').scrollIntoView();">Shared Database</li>
+  <li onclick="getElementById('searching').scrollIntoView();">Searching</li>
+</div>
+
+
+<div class="about-content">
+  <div class="about-collection-div">
+    <div class="about-div">
+      <p>This web application is designed to scrape Google and save the results to the database as profiles. It will use the search queries that you enter and return the emails it finds within those queries.</p><br/>
+
+      <h4>How It Works</h4>
+      <p>There are 5 identical web applications that are on different Heroku servers.<br/>
+      In any of the Heroku web application you can create search terms to be scraped.<br/>
+      All the web applications share the same database so terms and results are shared amongst all web applications.<br/>
+      There is a “trigger” script that you download and run locally, it iterates through each Heroku server scraping Google.<br/>
+      After the program is done scraping, you can download the data to an Excel file from any of the 5 Heroku web applications.</p>
+    </div>
+  </div>
+
+  <div class="about-collection-div">
+    <h2>Guide</h2>
+    <div class="about-div" id="walkthrough">
+      <h4>Walkthrough Example</h4>
+      <p>With the "trigger" script.</p>
+      <ol>
+        <li>Download the "trigger" script -
+          <%= link_to 'here', 'https://github.com/sean-nc/fin_scrape_trig', target: '_blank' %>.
+        </li>
+        <li>Go to
+          <%= link_to "Fintros Scraper", 'https://finscrap1.herokuapp.com/search_terms/new', target: '_blank' %>.
+        </li>
+        <li>Enter a new search term in the "Enter query" text area.</li>
+        <li>Click the "submit" button.</li>
+        <li>Open up your computer's terminal</li>
+        <li>In your terminal, navigate to the folder that has the "trigger" script.</li>
+        <li>Type "ruby scrape_trigger.rb" into the terminal and press enter.</li>
+      </ol>
+      <p>Through the "trigger" website.</p>
+      <ol>
+        <li>Go to
+          <%= link_to "Fintros Scraper", 'https://finscrap1.herokuapp.com/search_terms/new', target: '_blank' %>.
+        </li>
+        <li>Enter a new search term in the "Enter query" text area.</li>
+        <li>Click the "submit" button.</li>
+        <li>Go to the
+          <%= link_to 'Trigger Site', 'https://fintrigger.herokuapp.com/', target: '_blank' %>.
+        </li>
+        <li>Click "search".</li>
+        <li>The webpage will load until it is done scraping.</li>
+      </ol>
+    </div>
+
+    <div class="about-div" id="single-search">
+      <h4>How To Create a Single Search Term</h4>
+      <ol>
+        <li>Go to
+          <%= link_to "create new term",
+              'https://finscrap1.herokuapp.com/search_terms/new', target: '_blank' %>.
+        </li>
+        <li>Fill out the "Enter query" text area with the query you want to search for.</li>
+        <li>Click "submit".</li>
+        <li>Your search term has been created.</li>
+      </ol>
+    </div>
+
+    <div class="about-div" id="multiple-search">
+      <h4>How To Import an Excel Spreadsheet of Terms</h4>
+      <ol>
+        <li>Locally, create a new Excel spreadsheet.</li>
+        <li>Add only one search term per line. Enter them exactly how you would in Google search.</li>
+        <li>Save locally as .xlsx or .xls.</li>
+        <li>Go to
+          <%= link_to "create new term",
+              'https://finscrap1.herokuapp.com/search_terms/new', target: '_blank' %>.
+        </li>
+        <li>Under "Import Spreadsheets", click on the "Choose file" button.</li>
+        <li>Select the Excel file you wish to import.</li>
+        <li>Click "Upload".</li>
+        <li>Your new search terms have been created.</li>
+      </ol>
+    </div>
+
+    <div class="about-div" id="scrape">
+      <h4>How To Scrape</h4>
+      <p>With the "trigger" script.</p>
+      <ol>
+        <li>Download the “trigger” script -
+          <%= link_to 'here', 'https://github.com/sean-nc/fin_scrape_trig', target: '_blank' %>.
+        </li>
+        <li>Open your terminal.</li>
+        <li>In your terminal, go to the folder that has the "trigger" script.</li>
+        <li>Type “ruby scrape_trigger.rb” into the terminal and press enter.</li>
+      </ol>
+      <p>Through the "trigger" website.</p>
+      <ol>
+        <li>Go to the
+          <%= link_to 'Trigger Site', 'https://fintrigger.herokuapp.com/', target: '_blank' %>.
+        </li>
+        <li>Click "search".</li>
+        <li>The webpage will load until it is done scraping.</li>
+      </ol>
+    </div>
+
+    <div class="about-div" id="search-profiles">
+      <h4>How To Search Profiles</h4>
+      <ol>
+        <li>Go to the
+          <%= link_to "profiles page",
+              'https://finscrap1.herokuapp.com/profiles', target: '_blank' %>.
+        </li>
+        <li>Enter the name or email you wish to find into the search bar.</li>
+        <li>Click "search".</li>
+        <li>All profiles containing the name or email will show.</li>
+      </ol>
+    </div>
+
+    <div class="about-div" id="download-profiles">
+      <h4>How To Download Profiles</h4>
+      <ol>
+        <li>Go to the
+          <%= link_to "profiles page",
+              'https://finscrap1.herokuapp.com/profiles', target: '_blank' %>.
+        </li>
+        <li>Scroll to the bottom of the page.</li>
+        <li>Click on the "Download as .xlsx" button.</li>
+        <li>The profiles will download as an Excel spreadsheet.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="about-collection-div">
+    <h2>About</h2>
+    <div class="about-div" id="multiple-applications">
+      <h4>Multiple Heroku Applications</h4>
+      <p>There are multiple web applications (all identical) on Heroku because Google blocks the server's IP if it believes it is making robotic movements. Everytime one of the web application is blocked, the Heroku server restarts, this resets the IP, making it able to crawl Google again.</p>
+    </div>
+
+    <div class="about-div" id="trigger-script">
+      <h4>Trigger Script</h4>
+      <p>The script was created to run locally to control the search function of the Heroku web applications. The purpose of the “trigger” script is that when a web application gets blocked by Google, the “trigger” script moves to the next web application. The array of Heroku web applications are in a loop that runs until there are no search terms left to be searched. There are delays in the “trigger” script to allow for the Heroku servers to restart before being used again.</p>
+    </div>
+
+    <div class="about-div" id="shared-database">
+      <h4>Shared Database</h4>
+      <p>All the Heroku web applications share a single database. This means that all the results and the search terms are accessible on any of the Heroku web applications. This also adds for validation that each query and email is unique.</p>
+    </div>
+
+    <div class="about-div" id="searching">
+      <h4>Scraping</h4>
+      <p>It is suggested that you use the “trigger” script that I’ve provided. However, I've set up a "trigger" site
+          <%= link_to 'here', 'https://fintrigger.herokuapp.com/', target: '_blank' %>.
+          You can also scrape terms this way. I suggest the local script, because I don't know if Heroku will shut down the "trigger" server if you're in a loop for hours.
+      </p>
+    </div>
+  </div>
+</div>

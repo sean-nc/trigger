@@ -8,16 +8,13 @@
   function refreshPage() {
     $("#target")[0].click();
   }
-
   setTimeout(function () {
     setInterval('refreshPage()', 5000);
   }, 30000);
-
   function stoppedWorking() {
     if($('#stats:contains("Stopped")').length > 0) {
       window.location.reload()
     }
   }
-
   setInterval('stoppedWorking()', 10000)
 </script>
