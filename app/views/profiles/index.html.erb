@@ -19,6 +19,9 @@
         <div><b>ID:</b> <%= profile.id %></div>
         <div><b>Email:</b> <%= profile.email %></div>
         <div><b>Title:</b> <%= profile.title %></div>
+        <%= link_to 'EDIT', edit_profile_path(profile), class: "button" %>
+        <%= link_to 'DELETE', profile, method: :delete, data: { confirm: 'Are you sure?' },
+                                           class: "button delete-button" %>
       </div>
     <% end %>
   </div>

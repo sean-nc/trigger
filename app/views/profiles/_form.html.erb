@@ -1,0 +1,26 @@
+<div class="search terms-search">
+  <%= form_with(model: profile, local: true) do |form| %>
+    <% if profile.errors.any? %>
+      <div id="error_explanation">
+        <h4>Error</h4>
+
+        <ul>
+        <% profile.errors.full_messages.each_with_index do |message| %>
+
+          <li style="list-style: none; font-size: .75rem; margin: 0"><b><%= index =+ 1 %>)</b> <%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_area :email, size: "60x3" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "SUBMIT" %>
+    </div>
+  <% end %>
+</div>

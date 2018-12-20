@@ -16,7 +16,7 @@ class SearchTermsController < ApplicationController
   def create
     if params[:file]
       SearchTerm.import(params[:file])
-      redirect_to search_terms_url, notice: 'File is being uploaded in the background.'
+      redirect_to search_terms_url, notice: 'File has been uploaded.'
     else
       @search_term = SearchTerm.new(search_term_params)
       @search_term.query += ' -top -dir'

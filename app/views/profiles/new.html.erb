@@ -1,0 +1,10 @@
+<h4>New Profile</h4>
+<%= render 'form', profile: @profile %>
+
+<div class="search terms-search" style="margin-top: 9.375rem;">
+  <h5>Import Spreadsheet</h5>
+  <%= form_tag profiles_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "UPLOAD" %>
+  <% end %>
+</div>
