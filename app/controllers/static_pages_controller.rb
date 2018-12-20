@@ -15,18 +15,18 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    respond_to do |format|
-      format.html do
-        # in background
-        Thread.new do
-          TriggerService.run
-        end
-      end
-      # with AJAX, update stats
-      format.js do
+    # respond_to do |format|
+    #   format.html do
+    #     # in background
+    #     Thread.new do
+    #       TriggerService.run
+    #     end
+    #   end
+    #   # with AJAX, update stats
+    #   format.js do
 
-      end
-    end
+    #   end
+    # end
   end
 
   def calendar
