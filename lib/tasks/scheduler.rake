@@ -2,7 +2,7 @@ desc "This task is called by the Heroku scheduler add-on to trigger each scrapin
 task trigger_task: :environment do
   puts "Starting Trigger"
   if SearchTerm.where(searched: false).count > 0
-    12.times do |i|
+    10.times do |i|
       p i
       TriggerService.run
       sleep 30
