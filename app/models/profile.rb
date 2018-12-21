@@ -16,7 +16,6 @@ class Profile < ApplicationRecord
     spreadsheet = Roo::Spreadsheet.open(file.path, csv_options: {encoding: Encoding::ISO_8859_1})
     (spreadsheet.first_row..spreadsheet.last_row).each do |i|
       email = spreadsheet.row(i)[0]
-      email += ' -top -dir'
       Profile.create(email: email)
     end
   end
